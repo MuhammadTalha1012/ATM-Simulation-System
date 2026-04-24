@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriFTA Bank | Midnight Prestige</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background with YOUR exact images -->
+    <div class="bg-slideshow">
+       <div class="bg-slideshow">
+    <div class="slide active" style="background-image: url('./look11/image1.jpg.jfif');"></div>
+    <div class="slide" style="background-image: url('./look11/image2.jpg.jfif');"></div>
+    <div class="slide" style="background-image: url('./look11/image3.jpg.jfif');"></div>
+    <div class="slide" style="background-image: url('./look11/image4.jpg.jfif');"></div>
+
+    <div class="bg-overlay-dark"></div>
+    <div class="bg-gradient"></div>
+</div>
+        <div class="slide" style="background-image: url('file:///C:/Users/Hanzala%27s%20PC/Desktop/ATM_System/frontend/look11/image2.jpg.jfif');"></div>
+        <div class="slide" style="background-image: url('file:///C:/Users/Hanzala%27s%20PC/Desktop/ATM_System/frontend/look11/image3.jpg.jfif');"></div>
+        <div class="slide" style="background-image: url('file:///C:/Users/Hanzala%27s%20PC/Desktop/ATM_System/frontend/look11/image4.jpg.jfif');"></div>
+        <div class="bg-overlay-dark"></div>
+        <div class="bg-gradient"></div>
+    </div>
+
+    <!-- Rest of your HTML remains SAME -->
+    <div class="particles"></div>
+    <div class="app-container">
+        <!-- LOGIN SCREEN -->
+        <div id="loginScreen" class="screen active">
+            <div class="login-wrapper">
+                <div class="brand-luxury">
+                    <div class="luxury-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h1>TriFTA <span>BANK</span></h1>
+                    <p>Farwah | Talha | Abeera</p>
+                    <div class="accent-line"></div>
+                </div>
+                
+                <div class="login-glass">
+                    <div class="glass-header">
+                        <i class="fas fa-lock"></i>
+                        <h3>Secure Access</h3>
+                        <span>Enter your credentials</span>
+                    </div>
+                    
+                    <div class="input-luxury">
+                        <i class="fas fa-id-card"></i>
+                        <input type="number" id="cardNo" placeholder="Card Number" autocomplete="off">
+                        <div class="input-glow"></div>
+                    </div>
+                    
+                    <div class="input-luxury">
+                        <i class="fas fa-key"></i>
+                        <input type="password" id="pin" placeholder="PIN Code" maxlength="4">
+                        <div class="input-glow"></div>
+                    </div>
+                    
+                    <button class="btn-luxury" onclick="login()">
+                        <span>Access Account</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div class="demo-hint">
+                        <i class="fas fa-fingerprint"></i>
+                        <div class="demo-cards">
+                            <div class="demo-chip" onclick="fillDemo(1001,101)">
+                                <span>M.Talha</span>
+                                <small>1001 • 101</small>
+                            </div>
+                            <div class="demo-chip" onclick="fillDemo(1002,91)">
+                                <span>F.Shakeel</span>
+                                <small>1002 • 91</small>
+                            </div>
+                            <div class="demo-chip" onclick="fillDemo(1003,100)">
+                                <span>A.Naim</span>
+                                <small>1003 • 100</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-note">
+                    <span>© 2024 TriFTA Bank • Private Wealth Management</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- REST OF YOUR SCREENS (Dashboard, Balance, Withdraw, Deposit, History, Pin) -->
+        <!-- Copy paste from your original HTML here - everything from dashboardScreen to pinScreen -->
+        
+        <div id="dashboardScreen" class="screen">
+            <nav class="dashboard-nav">
+                <div class="nav-brand">
+                    <i class="fas fa-landmark"></i>
+                    <span>TriFTA BANK</span>
+                    <small>Midnight Prestige</small>
+                </div>
+                
+                <div class="welcome-center">
+                    <i class="fas fa-user-circle"></i>
+                    <div>
+                        <span>Welcome back,</span>
+                        <strong id="userName">Muhammad Talha</strong>
+                    </div>
+                </div>
+                
+                <div class="nav-right">
+                    <div class="card-badge">
+                        <i class="fas fa-credit-card"></i>
+                        <span id="userCard">**** 1001</span>
+                    </div>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="dashboard-grid">
+                <div class="balance-card-luxury">
+                    <div class="balance-header">
+                        <span>TOTAL BALANCE</span>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="balance-amount-luxury" id="dashboardBalance">₹0</div>
+                    <div class="balance-footer">
+                        <i class="fas fa-check-circle"></i> Updated real-time
+                    </div>
+                    <button class="refresh-balance-luxury" onclick="updateDashboardBalance()">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+
+                <div class="actions-grid">
+                    <div class="action-card" onclick="showWithdraw()">
+                        <div class="action-icon gold"><i class="fas fa-money-bill-wave"></i></div>
+                        <h4>Withdraw</h4>
+                        <p>Cash withdrawal</p>
+                    </div>
+                    <div class="action-card" onclick="showDeposit()">
+                        <div class="action-icon green"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h4>Deposit</h4>
+                        <p>Add funds</p>
+                    </div>
+                    <div class="action-card" onclick="showBalance()">
+                        <div class="action-icon blue"><i class="fas fa-chart-pie"></i></div>
+                        <h4>Balance</h4>
+                        <p>View details</p>
+                    </div>
+                    <div class="action-card" onclick="showHistory()">
+                        <div class="action-icon purple"><i class="fas fa-clock-rotate-left"></i></div>
+                        <h4>History</h4>
+                        <p>Transactions</p>
+                    </div>
+                    <div class="action-card" onclick="showChangePin()">
+                        <div class="action-icon orange"><i class="fas fa-key"></i></div>
+                        <h4>Change PIN</h4>
+                        <p>Security</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-users"></i> Development Team</h3>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member-card">
+                        <i class="fas fa-crown"></i>
+                        <strong>Muhammad Talha</strong>
+                        <span>Project Lead & Full Stack</span>
+                    </div>
+                    <div class="team-member-card">
+                        <i class="fas fa-star"></i>
+                        <strong>Farwah Shakeel</strong>
+                        <span>Backend & Security</span>
+                    </div>
+                    <div class="team-member-card">
+                        <i class="fas fa-gem"></i>
+                        <strong>Abeera Naim</strong>
+                        <span>Frontend & UI/UX</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-history"></i> Recent Transactions</h3>
+                    <button onclick="showHistory()" class="view-all">View All →</button>
+                </div>
+                <div id="recentTransactions" class="recent-list">
+                    <div class="loading-row"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BALANCE SCREEN -->
+        <div id="balanceScreen" class="screen">
+            <div class="action-container">
+                <button class="back-btn" onclick="showDashboard()"><i class="fas fa-arrow-left"></i> Back</button>
+                <div class="balance-detail-card">
+                    <div class="detail-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Current Balance</h3>
+                    <div class="detail-amount" id="balanceAmount">₹0</div>
+                    <div class="detail-info"><i class="fas fa-check-circle"></i> Account is active</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WITHDRAW SCREEN -->
+        <div id="withdrawScreen" class="screen">
+            <div class="action-container">
+                <button class="back-btn" onclick="showDashboard()"><i class="fas fa-arrow-left"></i> Back</button>
+                <div class="action-card-full">
+                    <h3><i class="fas fa-money-bill-wave"></i> Withdraw Funds</h3>
+                    <div class="amount-grid">
+                        <div class="amount-option" onclick="setAmount(100)">₹100</div>
+                        <div class="amount-option" onclick="setAmount(500)">₹500</div>
+                        <div class="amount-option" onclick="setAmount(1000)">₹1,000</div>
+                        <div class="amount-option" onclick="setAmount(2000)">₹2,000</div>
+                        <div class="amount-option" onclick="setAmount(5000)">₹5,000</div>
+                        <div class="amount-option" onclick="setAmount(10000)">₹10,000</div>
+                    </div>
+                    <div class="input-luxury">
+                        <i class="fas fa-rupee-sign"></i>
+                        <input type="number" id="withdrawAmount" placeholder="Enter custom amount">
+                        <div class="input-glow"></div>
+                    </div>
+                    <div class="action-btns">
+                        <button class="btn-confirm-luxury" onclick="withdraw()">Confirm Withdrawal</button>
+                        <button class="btn-cancel-luxury" onclick="showDashboard()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEPOSIT SCREEN -->
+        <div id="depositScreen" class="screen">
+            <div class="action-container">
+                <button class="back-btn" onclick="showDashboard()"><i class="fas fa-arrow-left"></i> Back</button>
+                <div class="action-card-full">
+                    <h3><i class="fas fa-hand-holding-usd"></i> Deposit Funds</h3>
+                    <div class="amount-grid">
+                        <div class="amount-option" onclick="setDepositAmount(100)">₹100</div>
+                        <div class="amount-option" onclick="setDepositAmount(500)">₹500</div>
+                        <div class="amount-option" onclick="setDepositAmount(1000)">₹1,000</div>
+                        <div class="amount-option" onclick="setDepositAmount(2000)">₹2,000</div>
+                        <div class="amount-option" onclick="setDepositAmount(5000)">₹5,000</div>
+                        <div class="amount-option" onclick="setDepositAmount(10000)">₹10,000</div>
+                    </div>
+                    <div class="input-luxury">
+                        <i class="fas fa-rupee-sign"></i>
+                        <input type="number" id="depositAmount" placeholder="Enter custom amount">
+                        <div class="input-glow"></div>
+                    </div>
+                    <div class="action-btns">
+                        <button class="btn-confirm-luxury" onclick="deposit()">Confirm Deposit</button>
+                        <button class="btn-cancel-luxury" onclick="showDashboard()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HISTORY SCREEN -->
+        <div id="historyScreen" class="screen">
+            <div class="action-container">
+                <button class="back-btn" onclick="showDashboard()"><i class="fas fa-arrow-left"></i> Back</button>
+                <div class="action-card-full">
+                    <h3><i class="fas fa-clock-rotate-left"></i> Transaction History</h3>
+                    <div id="historyList" class="history-list-luxury">
+                        <div class="loading-row"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHANGE PIN SCREEN -->
+        <div id="pinScreen" class="screen">
+            <div class="action-container">
+                <button class="back-btn" onclick="showDashboard()"><i class="fas fa-arrow-left"></i> Back</button>
+                <div class="action-card-full">
+                    <h3><i class="fas fa-key"></i> Change PIN</h3>
+                    <div class="input-luxury">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="oldPin" placeholder="Current PIN" maxlength="4">
+                        <div class="input-glow"></div>
+                    </div>
+                    <div class="input-luxury">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="newPin" placeholder="New PIN" maxlength="4">
+                        <div class="input-glow"></div>
+                    </div>
+                    <div class="input-luxury">
+                        <i class="fas fa-check-circle"></i>
+                        <input type="password" id="confirmPin" placeholder="Confirm PIN" maxlength="4">
+                        <div class="input-glow"></div>
+                    </div>
+                    <div class="action-btns"><div class="bg-slideshow">
+    <div class="slide active" style="background-image: url('look11/image1.jpg.jfif');"></div>
+    <div class="slide" style="background-image: url('look11/image2.jpg.jfif');"></div>
+    <div class="slide" style="background-image: url('look11/image3.jpg.jfif');"></div>
+    <div class="slide" style="background-image: url('look11/image4.jpg.jfif');"></div>
+    
+    <div class="bg-overlay-dark"></div>
+    <div class="bg-gradient"></div>
+</div>
+                        <button class="btn-confirm-luxury" onclick="changePin()">Update PIN</button>
+                        <button class="btn-cancel-luxury" onclick="showDashboard()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notesContainer" class="notes-container"></div>
+    <div id="toastContainer"></div>
+
+    <script src="app.js"></script>
+    <script src="app.js"></script>
+<script>
+    // Debug - check if script loaded
+    console.log('App loaded successfully');
+</script>
+</body>
+</html>
